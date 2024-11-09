@@ -11,6 +11,12 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {polling: true});
 //     bot.sendMessage(option.chat.id, 'Hello, I am a bot');
 // });  
 
+//gets user info
+bot.on('message', (option) => {
+    console.log('Message received on bot', option);
+    
+})
+
 bot.onText(/\/start/, (option) => {
     console.log('message received on bot', option);
     bot.sendMessage(option.chat.id, 'Hello, write /joke to get a joke');
